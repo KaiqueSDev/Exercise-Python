@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Minha Lista de Tarefas</h1>
+
+        <form method="POST" class="form-tarefa">
+            <input
+                type="text"
+                name="tarefa"
+                placeholder="Digite uma tarefa"
+                required
+            >
+
+            <button type="submit">
+                Adicionar
+            </button>
+        </form>
+
+        <ul class="lista-tarefas">
+
+            {% for tarefa in tarefas %}
+
+                <li class="tarefa-item">
+
+                   <span class="tarefa-titulo {% if tarefa[2] == 1 %}finalizada{% endif %}">
+                     {{ tarefa[1] }}
+                   </span>
+
+                    <div class="acoes">
+
+                        <a class="btn concluir" href="/concluir/{{ tarefa[0] }}">
+                            Concluir
+                        </a>
+
+                        <a class="btn editar" href="/editar/{{ tarefa[0] }}">
+                            Editar
+                        </a>
+
+                        <a class="btn excluir" href="/excluir/{{ tarefa[0] }}">
+                            Excluir
+                        </a>
+
+                    </div>
+
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</body>
+</html>

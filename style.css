@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8
+}
+container{
+    max-width: 700px;
+    margin: 60px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.form-tarefa{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.form-tarefa input{
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.form-tarefa button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    background: #111827;
+    color: white;
+
+    cursor: pointer;
+    font-size: 15px
+}
+.form-tarefa input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.lista-tarefas{
+    list-style: none;
+    padding: 0;
+}
+
+.tarefa-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    margin-bottom: 12px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.tarefa-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.concluir{
+    background-color: #22c55e;
+    color: white;
+}
+
+.editar{
+    background-color: #3b82f6;
+    color: white;
+}
+
+.excluir{
+    background: #ef4444;
+    color: white;
+}
+
+.btn:houver{
+    opacity: 0.85;
+}
+
+.finalizada{
+    text-decoration: line-throung;
+    opacity: 0.5;
+}
+
+@media (max-width: 600px){
+    .container{
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-tarefa{
+        flex-direction:column;
+    }
+
+    .tarefa-item{
+        flex-direction:column;
+        align-items: flex-strat;
+        gap: 15px;
+        }
+
+        .acoes{
+            width: 100%;
+            flex-wrap: wrap;
+        }
+}
